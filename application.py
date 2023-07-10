@@ -11,11 +11,12 @@ import requests                   #Para controlar sistema operativo
 
 import torch                                  
 from flask import Flask, jsonify, render_template      #lib para crear el servidor web
-from flask_ngrok import run_with_ngrok      #lib para crear la URL publica 
+from flask_ngrok2 import run_with_ngrok      #lib para crear la URL publica 
 from flask import url_for
 
 application = Flask(__name__)
-run_with_ngrok(application) #linea para indicar que se arrancara el servidor con Ngrok
+# run_with_ngrok(application) #linea para indicar que se arrancara el servidor con Ngrok
+run_with_ngrok(application,auth_token='2JptMb6IwVP0TlvTDfl77WG9pPl_4hAXcfFXxYqMEQ2RdN31e') # Linea para indicar que se arrancara el servidor con Ngrok Practicantes
 
 @application.route("/send-image2/<path:url>")       #Se asigna la direccion y indica que admite el metodo POST
 
